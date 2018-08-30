@@ -1,9 +1,9 @@
 import numpy as np
 import random as rm
 
-class markov_generator():
+class r_markov_generator():
     default_text_samples = [open("text_samples/caffeine_effects.txt", encoding="utf8").read(),
-                open("text_samples/MLK_I_have_a_dream.txt", encoding="utf8").read()]
+                            open("text_samples/MLK_I_have_a_dream.txt", encoding="utf8").read()]
 
     def __init__(self, data=default_text_samples, word_limit=200):
         # split text samples into individual words

@@ -1,6 +1,6 @@
 import numpy as np
 import random as rm
-from markov_generator import markov_generator
+from random_markov_generator import random_markov_generator
 
 # get speeches from text files. these will be the data for the markov chains
 trump = open("text_samples/trump_speeches.txt", encoding="utf8").read()
@@ -10,6 +10,6 @@ francis = open("text_samples/francis_speeches.txt", encoding="utf8").read()
 data = [trump, francis]
 
 #create a new generator with trump and francis data files as args
-generator = markov_generator([trump, francis])
+generator = random_markov_generator([trump, francis])
 #generate and print the data string
 generator.print_chain(generator.generate_chain())
