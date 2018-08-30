@@ -43,11 +43,11 @@ class r_markov_generator():
 
         # generate the word chain to approximate length
         for i in range(0, n_words):
-            chain.append(np.random.choice(self.word_dict[chain[-1]]))
+            chain.append(np.random.choice(self.word_dict[chain[-1]]["words"], replace=True, p=self.word_dict[chain[-1]]["probabilities"]))
 
         # force the chain to end on a punctuation mark, even if it exceeds the max length
         while chain[-1][-1] not in [".", "!", "?"]:
-            chain.append(np.random.choice(self.word_dict[chain[-1]]))
+            chain.append(np.random.choice(self.word_dict[chain[-1]]["words"], replace=True, p = self.word_dict[chain[-1]]["probabilities"]))
          # return the completed chain
         return " ".join(chain)
 
