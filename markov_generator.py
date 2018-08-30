@@ -35,9 +35,9 @@ class markov_generator():
         return first_word
 
     def generate_chain(self):
-        self.get_first_word(self.word_dict)
+        self.get_first_word()
         # begin creating the word chain
-        chain = [self.get_first_word(self.word_dict)]
+        chain = [self.get_first_word()]
         # pick a random number of words to have in the chain (roughyl)
         n_words = rm.randint(15,self.word_limit)
 
