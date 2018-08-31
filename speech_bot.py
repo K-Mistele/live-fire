@@ -5,10 +5,10 @@ from probabilistic_markov_generator import p_markov_generator
 from os import listdir
 
 # get speeches from text files. these will be the data for the markov chains
-trump = open("text_samples/trump_speeches.txt", encoding="utf8").read()
-francis = open("text_samples/francis_speeches.txt", encoding="utf8").read()
-caffeine = open("text_samples/caffeine_effects.txt", encoding="utf8").read()
-MLK = open("text_samples/MLK_I_have_a_dream.txt", encoding="utf8").read()
+# trump = open("text_samples/trump_speeches.txt", encoding="utf8").read()
+# francis = open("text_samples/francis_speeches.txt", encoding="utf8").read()
+# caffeine = open("text_samples/caffeine_effects.txt", encoding="utf8").read()
+# MLK = open("text_samples/MLK_I_have_a_dream.txt", encoding="utf8").read()
 #NOTE: need more Francis text. right now there's a lot more trump in it than francis.
 # list of any data resources that you want to add. can add/remove to tune the bot.
 print("Available files:")
