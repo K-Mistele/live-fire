@@ -1,9 +1,9 @@
 import numpy as np
 import random as rm
 
-class markov_generator():
+class r_markov_generator():
     default_text_samples = [open("text_samples/caffeine_effects.txt", encoding="utf8").read(),
-                open("text_samples/MLK_I_have_a_dream.txt", encoding="utf8").read()]
+                            open("text_samples/MLK_I_have_a_dream.txt", encoding="utf8").read()]
 
     def __init__(self, data=default_text_samples, word_limit=200):
         # split text samples into individual words
@@ -43,11 +43,11 @@ class markov_generator():
 
         # generate the word chain to approximate length
         for i in range(0, n_words):
-            chain.append(np.random.choice(self.word_dict[chain[-1]]))
+            chain.append(np.random.choice(self.word_dict[chain[-1]]["words"], replace=True, p=self.word_dict[chain[-1]]["probabilities"]))
 
         # force the chain to end on a punctuation mark, even if it exceeds the max length
         while chain[-1][-1] not in [".", "!", "?"]:
-            chain.append(np.random.choice(self.word_dict[chain[-1]]))
+            chain.append(np.random.choice(self.word_dict[chain[-1]]["words"], replace=True, p = self.word_dict[chain[-1]]["probabilities"]))
          # return the completed chain
         return " ".join(chain)
 
