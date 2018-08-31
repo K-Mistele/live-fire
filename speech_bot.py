@@ -48,6 +48,8 @@ for item in chosen_files:
 #create a new generator with trump and francis data files as args
 generator = p_markov_generator(data)
 #generate and print the data string
+print("*********************************************")
+print("Speech bot says:")
 generator.print_chain(generator.generate_chain())
 
 # His finest moment?
